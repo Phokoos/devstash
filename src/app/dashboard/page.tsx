@@ -1,15 +1,18 @@
+import { AppSidebar } from "@/components/dashboard/AppSidebar";
 import { MainContent } from "@/components/dashboard/MainContent";
-import { Sidebar } from "@/components/dashboard/Sidebar";
 import { TopBar } from "@/components/dashboard/TopBar";
+import { SidebarInset, SidebarProvider } from "@/components/ui/sidebar";
 
 export default function DashboardPage() {
   return (
-    <div className="flex h-screen flex-col">
+    <SidebarProvider className="h-screen flex-col">
       <TopBar />
       <div className="flex flex-1 overflow-hidden">
-        <Sidebar />
-        <MainContent />
+        <AppSidebar />
+        <SidebarInset>
+          <MainContent />
+        </SidebarInset>
       </div>
-    </div>
+    </SidebarProvider>
   );
 }
