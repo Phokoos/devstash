@@ -1,17 +1,5 @@
 import Link from "next/link";
-import {
-  Code,
-  File,
-  Folder,
-  Image as ImageIcon,
-  Link as LinkIcon,
-  type LucideIcon,
-  Settings,
-  Sparkles,
-  Star,
-  StickyNote,
-  Terminal,
-} from "lucide-react";
+import { Folder, Settings, Star } from "lucide-react";
 
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
@@ -29,17 +17,8 @@ import {
   SidebarRail,
   SidebarSeparator,
 } from "@/components/ui/sidebar";
+import { typeIcons } from "@/lib/item-types";
 import { collections, currentUser, itemTypes } from "@/lib/mock-data";
-
-const typeIcons: Record<string, LucideIcon> = {
-  Code,
-  Sparkles,
-  Terminal,
-  StickyNote,
-  File,
-  Image: ImageIcon,
-  Link: LinkIcon,
-};
 
 const favoriteCollections = collections.filter((c) => c.isFavorite);
 const recentCollections = collections.filter((c) => !c.isFavorite);
